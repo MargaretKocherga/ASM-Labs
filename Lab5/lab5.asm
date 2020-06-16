@@ -129,9 +129,11 @@ check_for_separation:
     jmp increment_manipulation_loop
          
 find_separator:
-    call check_word            ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    call check_word            
     cmp dl, 13                 ;    if cret
     je reset_word_counter      ;    word_counter = 0
+    cmp dl, 10
+    je reset_word_counter
          
     jmp increment_manipulation_loop 
         
